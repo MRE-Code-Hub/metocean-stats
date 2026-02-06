@@ -638,7 +638,7 @@ def aggregate_spectrum(data, hm0, var='SPEC', method='mean', month=None, hm0_thr
             # Select corresponding spectral data
             data_aggregated = data_spec.sel(time=hm0_filtered.time)
         elif np.isnan(hm0).all():
-            print(f'All Hm0_{list(data.data_vars)[0].split('_')[-1]} values are NaN')
+            # print(f'All Hm0_{list(data.data_vars)[0].split('_')[-1]} values are NaN')
             data_aggregated = data_spec.sel(time=hm0_filtered.time)
             data_aggregated = data_aggregated.map(lambda x: 0 * x)
         elif len(hm0_filtered.time) == 0:
